@@ -1,0 +1,383 @@
+/* 
+  ---Document Styles Below---
+*/
+
+:root {
+  --borderColorStart: rgba(255, 255, 255, 0.3);
+  --borderColorEnd: rgba(255, 255, 255, 0.8);
+  --globalBackgroundColor: rgb(0, 0, 0);
+  --globalLineColor: rgb(255, 255, 255);
+}
+
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+  background-color: var(--globalBackgroundColor);
+  color: var(--globalLineColor);
+  transition: 0.5s;
+}
+
+#modeSwitch {
+  height: 25px;
+  width: 25px;
+
+  padding: 5px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: var(--globalLineColor);
+}
+
+#bio {
+  
+  display: flex;
+  flex-direction: row;
+  background-color: var(--globalBackgroundColor);
+  width: 600px;
+
+  padding: 10px; 
+  border-radius: 12px;
+  border-style: solid;
+
+  background-color: var(--globalBackgroundColor);
+  border-color: var(--globalLineColor);
+  color: var(--globalLineColor);
+  transition: 0.5s;
+
+  
+}
+
+#Photo { 
+  height: 200px;
+  width: 160px;
+
+  align-self: last baseline;
+}
+
+#bioInfo {
+  justify-items: left;
+}
+
+.bioText {
+  font-size: 12;
+  color: var(--globalLineColor);
+  justify-self: left;
+}
+
+#Name {
+ font-size: 24px;
+ font-weight: bold;
+}
+
+
+.mainButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.centeredDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.mButton {
+  width: 120px;
+  height: 50px;
+  margin: 20px;
+  padding: 10px, 5px;
+
+  font-size: 12px;
+  font-weight: 500px;
+
+  border-radius: 12px;
+  background-color: var(--globalBackgroundColor);
+  border-color: var(--globalLineColor);
+  color: var(--globalLineColor);
+  transition: 0.5s;
+}
+
+.mButton:hover {
+  background: #303030;
+}
+
+.mButton:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+
+
+.spacer {
+  width: 0px;
+  height: 50px;
+
+  content: '';
+}
+
+.miniSpacer {
+  width: 0px;
+  height: 20px;
+
+  content: '';
+}
+
+@keyframes fadeInAbsolute {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInPartial {
+
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes inFocus {
+
+  from {
+    scale: 1
+  }
+
+  to {
+    scale: 1.05
+  }
+}
+
+#All_Projects {
+  justify-content: center;
+}
+
+.A_Subject {
+  justify-content: middle;
+  justify-items: middle;
+  justify-self: middle; 
+}
+
+.A_Project {
+
+  scale: 1.001; 
+  display: flex;
+  flex-direction: row;
+  justify-self: center; 
+
+  position: relative;
+  transition: 0.5s;
+
+  opacity: 0.5;
+  content: '';
+  height: auto;
+  width: fit-content;
+  padding: 20px;
+  background-color: var(--globalBackgroundColor);
+
+  border-radius: 15px;
+  border-style: solid;
+  border-color: var(--globalLineColor);
+  
+}
+
+@keyframes borderInAndOut {
+
+  from {
+    border: 15px, solid, var(--borderColorStart);
+  }
+
+  to {
+    border: 15px, solid, var(--borderColorEnd);
+  }
+
+}
+
+.A_Project:hover {
+  opacity: 1;
+  z-index: 100;
+  transform: scale(1.2, 1.2);
+  animation: borderInAndOut;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: 0.5s; 
+}
+
+.Project_Left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+
+  padding-right: 0%;
+}
+
+.Square {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+
+.Horiz_Rect {
+  width: 300px;
+  height: 200px;
+  align-self: center;
+}
+
+.RectHalfGrouper {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 400px;
+}
+
+.An_IconRectHalf {
+  width: 150px;
+  height: 200px;
+  align-self: center;
+}
+
+.Vert_Rect {
+  width: fit-content;
+  height: 300px;
+}
+
+.Project_Header {
+  width: inherit;
+
+  display: flex;
+  flex-direction: row;
+  align-items: last baseline;
+  justify-content: space-between;
+  gap: 60px;
+  padding-bottom: 15px;
+}
+
+.A_Title {
+  animation: fadeInAbsolute 3s linear;
+  margin: 0;
+  padding: 0;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.A_Date {
+  animation: fadeInAbsolute 3s linear;
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+}
+
+.DescButtons {
+  display: grid;
+  grid: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.A_DescButton {
+  width: 120px;
+  height: 50px;
+  margin: 20px;
+  padding: 10px, 5px;
+  font-size: 12px;
+  font-weight: 500px;
+
+  border-radius: 12px;
+  background-color: var(--globalBackgroundColor);
+  border-color: var(--globalLineColor);
+  color: var(--globalLineColor);
+  transition: 0.5s;
+}
+
+.All_Descriptions {
+  width: 200px;   
+  margin: 0%;
+  padding: 0%;
+  padding: 0%;
+
+  display: none;
+
+  justify-items: center;
+}
+
+.A_Description {
+  animation: fadeInAbsolute 0.5s linear;
+
+  font-size: 12px;
+  font-weight: normal;
+  padding: 10px;
+ 
+  justify-self: center;
+  text-align: left;
+  align-self: center; 
+  width: fit-content;
+
+  border-radius: 10px;
+  border-color: var(--globalLineColor);
+  border-style: solid;
+
+  display: none;
+}
+
+
+.A_DescVideo {
+  align-self: first baseline;
+
+  border-radius: 10px;
+  border-color: var(--globalLineColor);
+  border-style: solid;
+
+  width: inherit;
+  height: inherit;
+
+  align-self: center; 
+
+  display: none; 
+}
+
+#popup_Container {
+  display: grid; 
+  place-items: center; 
+
+  width: fit-content;
+  height: fit-content;
+  height: 100%;
+}
+
+#popup_Image {
+  position: fixed; 
+  z-index: 200; 
+  width: 350px;
+  height: fit-content;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 10px; 
+  border-color: var(--globalLineColor); 
+  border-style: solid;
+  
+
+}
+
