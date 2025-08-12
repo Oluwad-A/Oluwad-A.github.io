@@ -126,14 +126,6 @@ body {
   z-index: 1;
 }
 
-
-.spacer {
-  width: 0px;
-  height: 50px;
-
-  content: '';
-}
-
 .miniSpacer {
   width: 0px;
   height: 20px;
@@ -187,13 +179,13 @@ body {
 
 .A_Project {
 
-  scale: 1.001;
+  scale: 0.8;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-self: center;
 
   width: fit-content;
-  max-width: 1000px;
+  max-width: 650px;
 
   position: relative;
   transition: 0.5s;
@@ -238,6 +230,19 @@ body {
   width: fit-content;
 }
 
+.A_Project:hover {
+  opacity: 1;
+  z-index: 100;
+  transform: scale(1.2, 1.2);
+  animation: borderInAndOut;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: 0.5s;
+
+  width: fit-content;
+}
+
 .Project_Left {
   display: flex;
   flex-direction: column;
@@ -255,7 +260,8 @@ body {
 
 .Horiz_Rect {
   width: 100%;
-  max-width: 600px;
+  min-width: 50px;
+  max-width: 400px;
   align-self: center;
   margin: 20px;
 
@@ -264,21 +270,29 @@ body {
 
 .Vert_Rect {
   width: 50%;
-  padding: 1%;
-  max-width: 300px;
+  margin: 10px;
   height: 300px;
+ 
+}
+
+#DCNIcon1 {
+  justify-self: left;
+}
+
+#DCNIcon2 {
+  justify-self: right; 
 }
 
 .RectHalfGrouper {
+
   display: flex;
   flex-direction: row; 
   width: 100%;
-  max-width: 600px;
+   max-width: 500px;
+
   margin-right: 20px;
   margin-left: 20px;
   align-self: center; 
-
-
 }
 
 .Project_Header {
@@ -335,28 +349,30 @@ body {
 
 .All_Descriptions {
  
-  width: 30%;
-  margin: 0%;
-  padding: 0%;
-  padding: 0%;
+  width: 100%;
+  padding: 10px;
+  margin: 10px; 
 
   display: none;
 
   justify-items: center;
+  justify-self: center;
 }
 
 .A_Description {
   animation: fadeInAbsolute 0.5s linear;
 
   width: 100%;
+  max-width: 600px;
+  margin: 10px;
+  padding: 10px; 
 
-  font-size: 12px;
+  font-size: 15px;
   font-weight: normal;
-  padding: 10px;
 
   justify-self: center;
   text-align: left;
-  align-self: center;
+
 
   border-radius: 10px;
   border-color: var(--globalLineColor);
@@ -368,6 +384,8 @@ body {
 
 .A_DescVideo {
   align-self: first baseline;
+
+  width: 30px;
 
   border-radius: 10px;
   border-color: var(--globalLineColor);
