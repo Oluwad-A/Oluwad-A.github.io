@@ -66,12 +66,16 @@ body {
 #Photo {
   height: inherit;
   width: 25%;
+  min-width: 0px;
+  max-width: 250px;
 
   align-self: last baseline;
 }
 
 #bioInfo {
   justify-items: left;
+  width: 75%;
+  max-width: 400px;
 }
 
 .bioText {
