@@ -207,8 +207,8 @@ function showPopup(imageId) {
     thePopup.style.display = 'grid';
     popupImage.src = theImage.src;
 
-    popupImage.style.width = 'fit-content';
-    popupImage.style.maxWidth = '400px';
+    popupImage.style.width = '98%';
+    popupImage.style.maxWidth = '450px';
     popupImage.style.height = 'auto';
 
 }
