@@ -45,7 +45,7 @@ body {
   display: flex;
   flex-direction: row;
   background-color: var(--globalBackgroundColor);
-  width: 600px;
+  width: 100%;
 
   padding: 10px; 
   border-radius: 12px;
@@ -86,6 +86,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-self: center;
+
+  width: 100%; 
 }
 
 .centeredDiv {
@@ -94,10 +96,10 @@ body {
 }
 
 .mButton {
-  width: 120px;
+  width: 30%;
   height: 50px;
-  margin: 20px;
-  padding: 10px, 5px;
+  margin: 1%;
+  padding: 1%, 3%;
 
   font-size: 12px;
   font-weight: 500px;
