@@ -1,434 +1,217 @@
-/* 
-  ---Document Styles Below---
+
+
+
+const fullBody = document.getElementById("TheBody");
+let lastSelectedIdx;
+let latestDescButton;
+
+
+/*
+  Items below pertain to light-mode/dark-mode toggle. 
 */
+var dayMode = false;
 
-:root {
-  --borderColorStart: rgba(255, 255, 255, 0.3);
-  --borderColorEnd: rgba(255, 255, 255, 0.8);
-  --globalBackgroundColor: rgb(0, 0, 0);
-  --globalLineColor: rgb(255, 255, 255);
-}
+const swapper = document.getElementById("modeSwitch");
+const mainButtons = document.getElementsByClassName("mButton");
 
-body {
-  display: flex;
-  flex-direction: column;
+function swapScreen() {
 
-  text-align: center;
-  align-items: center;
+    if (dayMode) {
 
-  justify-self: center;
-  justify-content: center;
+        modeSwitch.src = "/Showcase Site/BaseIcons/MoonIcon.png";
 
-  font-family: Arial, sans-serif;
-  transition: background-color 0.5s, color 0.5s;
-  background-color: var(--globalBackgroundColor);
-  color: var(--globalLineColor);
-  transition: 0.5s;
-}
+        dayMode = false;
 
-#content {
-  width: 90%;
-  justify-content: center;
-  justify-self: center;
+        fullBody.style.backgroundColor = "#000000";
+        fullBody.style.color = "#ffffff";
 
-  border-color: var(--globalLineColor); 
-  border-radius: 10px;
-}
+        // Base colors of all Projects
+        const projects = document.getElementsByClassName("A_Project");
+        for (let index = 0; index < projects.length; index++) {
+            projects[index].style.backgroundColor = "#000000";
+            projects[index].style.borderColor = "#ffffff";
+        }
+
+        // Sets the main three button colors
+        for (let buttonIdx = 0; buttonIdx < mainButtons.length; buttonIdx++) {
+            mainButtons[buttonIdx].style.color = "#ffffff";
+            mainButtons[buttonIdx].style.borderColor = "#ffffff";
+            if (lastSelectedIdx != buttonIdx) {
+                mainButtons[buttonIdx].style.backgroundColor = "#000000";
+            } else {
+                mainButtons[buttonIdx].style.backgroundColor = "#878787";
+            }
+        }
+
+        // Sets border colors for projects
+        document.documentElement.style.setProperty('--borderColorStart', 'rgba(255, 255, 255, 0.3)');
+        document.documentElement.style.setProperty('--borderColorEnd', 'rgba(255, 255, 255, 0.8)');
+
+        document.documentElement.style.setProperty('--globalBackgroundColor', 'rgb(0, 0, 0)');
+        document.documentElement.style.setProperty('--globalLineColor', 'rgb(255, 255, 2550)');
+
+    } else {
+
+        modeSwitch.src = "/Showcase Site/BaseIcons/SunIcon.png";
+
+        dayMode = true;
+
+        fullBody.style.backgroundColor = "#ffffff";
+        fullBody.style.color = "#000000";
+
+        // Base colors of all Projects
+        const projects = document.getElementsByClassName("A_Project");
+        for (let index = 0; index < projects.length; index++) {
+            projects[index].style.backgroundColor = "#ffffff";
+            projects[index].style.borderColor = "#000000";
+        }
+
+        // Sets the main three button colors
+        for (let buttonIdx = 0; buttonIdx < mainButtons.length; buttonIdx++) {
+            mainButtons[buttonIdx].style.color = "#000000";
+            mainButtons[buttonIdx].style.borderColor = "#000000";
+            if (lastSelectedIdx != buttonIdx) {
+                mainButtons[buttonIdx].style.backgroundColor = "#ffffff";
+            } else {
+                mainButtons[buttonIdx].style.backgroundColor = "#878787";
+            }
+        }
+
+        // Sets colors for animated borders on projects
+        document.documentElement.style.setProperty('--borderColorStart', 'rgba(0, 0, 0, 0.3)');
+        document.documentElement.style.setProperty('--borderColorEnd', 'rgba(0, 0, 0, 0.8)');
+
+        document.documentElement.style.setProperty('--globalBackgroundColor', 'rgb(255, 255, 255)');
+        document.documentElement.style.setProperty('--globalLineColor', 'rgb(0, 0, 0)');
+
+    }
 
 
-#modeSwitch {
-  height: 25px;
-  width: 25px;
 
-  padding: 5px;
-  border-radius: 20px;
-  border-style: solid;
-  border-color: var(--globalLineColor);
-}
-
-#bio {
-
-  display: flex;
-  flex-direction: row;
-  justify-self: center; 
-  background-color: var(--globalBackgroundColor);
-  width: 95%;
-
-  padding: 10px;
-  border-radius: 12px;
-  border-style: solid;
-
-  background-color: var(--globalBackgroundColor);
-  border-color: var(--globalLineColor);
-  color: var(--globalLineColor);
-  transition: 0.5s;
-
-
-}
-
-#Photo {
-  
-  height: inherit;
-  width: 25%;
-  min-width: 0px;
-  max-width: 250px;
-
-  align-self: last baseline;
-}
-
-#bioInfo {
-  justify-items: left;
-  width: 75%;
-  max-width: 400px;
-}
-
-.bioText {
-  font-size: 10px;
-  color: var(--globalLineColor);
-  justify-self: left;
-}
-
-#Name {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.mainButtons {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-
-  width: 100%;
-}
-
-#buttonDiv {
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
-  justify-content: space-between;
-  gap: 5px;
-  width: 100%;
-}
-
-.mButton {
-  width: 30%;
-  height: 50px;
-  margin: 1%;
-  padding: 1%, 3%;
-
-  font-size: 12px;
-  font-weight: 500px;
-
-  border-radius: 12px;
-  background-color: var(--globalBackgroundColor);
-  border-color: var(--globalLineColor);
-  color: var(--globalLineColor);
-  transition: 0.5s;
-}
-
-.mButton:hover {
-  background: #303030;
-}
-
-.mButton:before {
-  content: '';
-  position: absolute;
-  z-index: 1;
-}
-
-.miniSpacer {
-  width: 0px;
-  height: 20px;
-
-  content: '';
-}
-
-@keyframes fadeInAbsolute {
-
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInPartial {
-
-  from {
-    opacity: 0.3;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes inFocus {
-
-  from {
-    scale: 1
-  }
-
-  to {
-    scale: 1.05
-  }
-}
-
-#All_Projects {
-  width: 100%;
-  justify-content: center;
-  justify-self: center; 
-}
-
-.A_Subject {
-  justify-self: center;
-  justify-content: center;
-}
-
-.A_Project {
-
-  scale: 0.8;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-
-  width: 90%;
-  max-width: 650px;
-
-  position: relative;
-  transition: 0.5s;
-
-  opacity: 1;
-  content: '';
-  height: auto;
-
-  padding: 20px;
-  margin-left: 0;
-  margin-right: 0; 
-  background-color: var(--globalBackgroundColor);
-
-  border-radius: 15px;
-  border-style: solid;
-  border-color: var(--globalLineColor);
+    // Ensures Last selected button remains visually selected.
+    mainButtons[lastSelectedIdx].style.backgroundColor = "#878787";
 
 }
 
-@keyframes borderInAndOut {
 
-  from {
-    border: 15px, solid, var(--borderColorStart);
-  }
 
-  to {
-    border: 15px, solid, var(--borderColorEnd);
-  }
+function toggleSection(index) {
 
+    lastSelectedIdx = index;
+
+    /*
+      Changes visible section
+    */
+
+    if (index == 0) {
+        document.getElementById("All_CS").style.display = 'block';
+        document.getElementById("All_Design").style.display = 'none';
+        document.getElementById("Other").style.display = 'none';
+    }
+    if (index == 1) {
+        document.getElementById("All_CS").style.display = 'none';
+        document.getElementById("All_Design").style.display = 'block';
+        document.getElementById("Other").style.display = 'none';
+    }
+    if (index == 2) {
+        document.getElementById("All_CS").style.display = 'none';
+        document.getElementById("All_Design").style.display = 'none';
+        document.getElementById("Other").style.display = 'block';
+    }
+
+    /*
+      Clarifies selected button
+    */
+    for (let buttonIdx = 0; buttonIdx < mainButtons.length; buttonIdx++) {
+        if (index != buttonIdx) {
+            if (dayMode == false) {
+                mainButtons[buttonIdx].style.backgroundColor = "#000000";
+                mainButtons[buttonIdx].style.color = "#ffffff";
+                mainButtons[buttonIdx].style.borderColor = "#ffffff";
+            } else {
+                mainButtons[buttonIdx].style.backgroundColor = "#ffffff";
+                mainButtons[buttonIdx].style.color = "#000000";
+                mainButtons[buttonIdx].style.borderColor = "#000000";
+            }
+        } else {
+            mainButtons[buttonIdx].style.backgroundColor = "#878787";
+        }
+    }
+}
+
+function hoverColor(buttonIdx) {
+
+    if (dayMode == false) {
+        mainButtons[buttonIdx].style.backgroundColor = "#303030";
+    } else {
+        mainButtons[buttonIdx].style.backgroundColor = "#cccccc";
+    }
+    // Ensures Last selected button remains visually selected.
+    mainButtons[lastSelectedIdx].style.backgroundColor = "#878787";
+
+}
+
+function returnColor(buttonIdx) {
+    if (dayMode == false) {
+        mainButtons[buttonIdx].style.backgroundColor = "#000000";
+    } else {
+        mainButtons[buttonIdx].style.backgroundColor = "#ffffff";
+    }
+
+    // Ensures Last selected button remains visually selected.
+    mainButtons[lastSelectedIdx].style.backgroundColor = "#878787";
 }
 
 /*
-  Hover currently incompatible with mobile. To be resolved.
+  Implementation of buttons under projects. 
 */
 
-/*
+let clicks = 0;
 
-.A_Project:hover {
-  opacity: 1;
-  z-index: 100;
-  transform: scale(1.1, 1.1);
-  animation: borderInAndOut;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  transition: 0.5s;
+function toggleDescVisibility(theID) {
 
-  width: 100%;
+    const targetClass = theID.substring(0, 7);
+
+    let allDescriptionsHere = document.getElementById(targetClass.substring(0, 3) + '_All');
+
+    let descList = document.getElementsByClassName(targetClass);
+    for (index = 0; index < descList.length; index++) {
+
+        // If the current description matches the clicked id...
+        let currentDesc = descList[index];
+        if (theID == currentDesc.id) {
+
+            if (currentDesc.style.display == 'none') {
+                allDescriptionsHere.style.display = 'flex';
+                currentDesc.style.display = 'flex';
+            } else {
+                allDescriptionsHere.style.display = 'none';
+                currentDesc.style.display = 'none';
+            }
+        } else {
+            currentDesc.style.display = 'none';
+        }
+    }
 }
 
-*/
+function showPopup(imageId) {
+    const thePopup = document.getElementById("popup_Container");
+    const popupImage = document.getElementById("popup_Image");
+    const theImage = document.getElementById(imageId);
 
-.Project_Left {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  align-items: center;
+    popupImage.addEventListener('click', function () {
+        document.getElementById("popup_Container").style.display = 'none';
+        document.getElementById("popup_Image").src = '';
+    });
 
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+    thePopup.style.display = 'grid';
+    popupImage.src = theImage.src;
 
-.Square {
-  width: 70%;
-  max-width: 400px;
-  align-self: center;
-}
-
-.Horiz_Rect {
-  width: 100%;
-  min-width: 50px;
-  max-width: 400px;
-  align-self: center;
-  margin: 20px;
-
-}
-
-
-.Vert_Rect {
-  width: 50%;
-  height: 300px;
+    popupImage.style.width = '98%';
+    popupImage.style.maxWidth = '450px';
+    popupImage.style.height = 'auto';
 
 }
 
-#DCNIcon1 {
-  justify-self: left;
-}
-
-#DCNIcon2 {
-  justify-self: right;
-}
-
-.RectHalfGrouper {
-
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 500px;
-
-  margin-right: 20px;
-  margin-left: 20px;
-  align-self: center;
-}
-
-.Project_Header {
-  width: 90%;
-
-  display: flex;
-  flex-direction: row;
-  align-items: last baseline;
-  justify-content: space-between;
-
-  margin: 20px;
-}
-
-.A_Title {
-  animation: fadeInAbsolute 3s linear;
-  margin: 0;
-  padding: 0;
-
-  font-size: 20px;
-  font-weight: bold;
-
-  justify-self: left;
-}
-
-.A_Date {
-  animation: fadeInAbsolute 3s linear;
-  margin: 0;
-  padding: 0;
-
-  font-size: 14px;
-  justify-self: right;
-}
-
-.DescButtons {
-  display: flex;
-  flex-direction: space-between;
-  gap: 0px;
-  margin: 10px;
-}
-
-.A_DescButton {
-  width: 80px;
-  height: 50px;
-  margin: 2px;
-  padding: 10px;
-  font-size: 9px;
-  font-weight: 500px;
-
-  text-align: center; 
-
-  border-radius: 12px;
-  background-color: var(--globalBackgroundColor);
-  border-color: var(--globalLineColor);
-  color: var(--globalLineColor);
-  transition: 0.5s;
-}
-
-.All_Descriptions {
-
-  width: 100%;
-  padding: 10px;
-  margin: 10px;
-
-  display: none;
-
-  justify-items: center;
-  justify-self: center;
-}
-
-.A_Description {
-  animation: fadeInAbsolute 0.5s linear;
-
-  width: 100%;
-  max-width: 600px;
-  margin: 10px;
-  padding: 10px;
-
-  font-size: 15px;
-  font-weight: normal;
-
-  justify-self: center;
-  text-align: left;
 
 
-  border-radius: 10px;
-  border-color: var(--globalLineColor);
-  border-style: solid;
-
-  display: none;
-}
-
-
-.A_DescVideo {
-  align-self: first baseline;
-
-  width: 30px;
-
-  border-radius: 10px;
-  border-color: var(--globalLineColor);
-  border-style: solid;
-
-  width: inherit;
-  height: inherit;
-
-  align-self: center;
-
-  display: none;
-}
-
-#popup_Container {
-  display: none;
-  place-items: center;
-
-  width: 100%;
-  height: 100%;
-}
-
-#popup_Image {
-  z-index: 200;
-
-  position: fixed;
-  width: 50px; 
-
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  border-radius: 10px;
-  border-color: var(--globalLineColor);
-  border-style: solid;
-
-}
