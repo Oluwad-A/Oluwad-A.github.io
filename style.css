@@ -31,7 +31,7 @@ body {
 }
 
 #content {
-  width: 100%;
+  width: 95%;
   justify-content: center;
 }
 
@@ -261,7 +261,17 @@ body {
 
 }
 
+
+.Vert_Rect {
+  width: 50%;
+  padding: 1%;
+  max-width: 300px;
+  height: 300px;
+}
+
 .RectHalfGrouper {
+  display: flex;
+  flex-direction: row; 
   width: 100%;
   max-width: 600px;
   margin-right: 20px;
@@ -269,16 +279,6 @@ body {
   align-self: center; 
 
 
-}
-
-.An_IconRectHalf {
-  width: 50%;
-  align-self: center;
-}
-
-.Vert_Rect {
-  width: fit-content;
-  height: 300px;
 }
 
 .Project_Header {
@@ -335,7 +335,7 @@ body {
 
 .All_Descriptions {
  
-  width: 20%;
+  width: 30%;
   margin: 0%;
   padding: 0%;
   padding: 0%;
@@ -348,6 +348,8 @@ body {
 .A_Description {
   animation: fadeInAbsolute 0.5s linear;
 
+  width: 100%;
+
   font-size: 12px;
   font-weight: normal;
   padding: 10px;
@@ -355,7 +357,6 @@ body {
   justify-self: center;
   text-align: left;
   align-self: center;
-  width: fit-content;
 
   border-radius: 10px;
   border-color: var(--globalLineColor);
