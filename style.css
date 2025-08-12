@@ -94,9 +94,6 @@ body {
 }
 
 .mainButtons {
-    border-radius: 15px;
-  border-style: solid;
-  border-color: var(--globalLineColor);
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -180,9 +177,6 @@ body {
 }
 
 #All_Projects {
-  border-radius: 15px;
-  border-style: solid;
-  border-color: var(--globalLineColor);
   width: 100%;
   justify-content: center;
   justify-self: center; 
@@ -428,6 +422,7 @@ body {
   position: fixed;
   width: 50px; 
 
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -435,6 +430,5 @@ body {
   border-radius: 10px;
   border-color: var(--globalLineColor);
   border-style: solid;
-
 
 }
