@@ -31,8 +31,9 @@ body {
 }
 
 #content {
-  width: 95%;
+  width: 90%;
   justify-content: center;
+  justify-self: center; 
 }
 
 
@@ -51,7 +52,7 @@ body {
   display: flex;
   flex-direction: row;
   background-color: var(--globalBackgroundColor);
-  width: 100%;
+  width: 90%;
 
   padding: 10px;
   border-radius: 12px;
@@ -95,9 +96,11 @@ body {
   width: 100%;
 }
 
-.centeredDiv {
+#buttonDiv {
   display: flex;
   flex-direction: row;
+  justify-self: center; 
+  width: 100%; 
 }
 
 .mButton {
@@ -328,7 +331,7 @@ body {
 
 .DescButtons {
   display: flex;
-  flex-direction: row;
+  flex-direction: space-between;
   gap: 0px;
 }
 
@@ -400,7 +403,7 @@ body {
 }
 
 #popup_Container {
-  display: grid;
+  display: none;
   place-items: center;
 
   width: fit-content;
