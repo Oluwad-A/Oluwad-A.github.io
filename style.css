@@ -16,7 +16,7 @@ body {
   text-align: center;
   align-items: center;
 
-  justify-self: center; 
+  justify-self: center;
   justify-content: center;
 
   margin: 0;
@@ -32,7 +32,7 @@ body {
 
 #content {
   width: 100%;
-  justify-content: center; 
+  justify-content: center;
 }
 
 
@@ -47,13 +47,13 @@ body {
 }
 
 #bio {
-  
+
   display: flex;
   flex-direction: row;
   background-color: var(--globalBackgroundColor);
   width: 100%;
 
-  padding: 10px; 
+  padding: 10px;
   border-radius: 12px;
   border-style: solid;
 
@@ -62,10 +62,10 @@ body {
   color: var(--globalLineColor);
   transition: 0.5s;
 
-  
+
 }
 
-#Photo { 
+#Photo {
   height: auto;
   width: 25%;
 
@@ -83,17 +83,16 @@ body {
 }
 
 #Name {
- font-size: 24px;
- font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
-
 
 .mainButtons {
   display: flex;
   flex-direction: column;
   justify-self: center;
 
-  width: 100%; 
+  width: 100%;
 }
 
 .centeredDiv {
@@ -176,24 +175,25 @@ body {
 }
 
 #All_Projects {
-  width: 100%; 
+  width: 100%;
   justify-content: center;
 }
 
 .A_Subject {
   justify-content: middle;
   justify-items: middle;
-  justify-self: middle; 
+  justify-self: middle;
 }
 
 .A_Project {
 
-  scale: 1.001; 
+  scale: 1.001;
   display: flex;
   flex-direction: row;
-  justify-self: center; 
+  justify-self: center;
 
-  width: fit-content; 
+  width: fit-content;
+  max-width: 1000px;
 
   position: relative;
   transition: 0.5s;
@@ -201,14 +201,16 @@ body {
   opacity: 0.5;
   content: '';
   height: auto;
-  
+
   padding: 20px;
+  padding-right: 0px;
+  padding-left: 0px;
   background-color: var(--globalBackgroundColor);
 
   border-radius: 15px;
   border-style: solid;
   border-color: var(--globalLineColor);
-  
+
 }
 
 @keyframes borderInAndOut {
@@ -231,7 +233,7 @@ body {
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  transition: 0.5s; 
+  transition: 0.5s;
 
   width: fit-content;
 }
@@ -239,38 +241,38 @@ body {
 .Project_Left {
   display: flex;
   flex-direction: column;
-  justify-self: center; 
+  justify-self: center;
   align-items: center;
 
   width: fit-content;
-
-  padding-right: 0%;
 }
 
 .Square {
-  width: 200px;
-  height: 200px;
+  width: 70%;
+  max-width: 400px;
   align-self: center;
 }
 
 .Horiz_Rect {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-width: 600px;
   align-self: center;
+  margin: 20px;
+
 }
 
 .RectHalfGrouper {
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin-right: 20px;
+  margin-left: 20px;
+  align-self: center; 
 
-  width: 400px;
+
 }
 
 .An_IconRectHalf {
-  width: 150px;
-  height: 200px;
+  width: 50%;
   align-self: center;
 }
 
@@ -280,14 +282,14 @@ body {
 }
 
 .Project_Header {
-  width: inherit;
+  width: 90%;
 
   display: flex;
   flex-direction: row;
   align-items: last baseline;
   justify-content: space-between;
-  gap: 60px;
-  padding-bottom: 15px;
+
+  margin: 20px;
 }
 
 .A_Title {
@@ -297,6 +299,8 @@ body {
 
   font-size: 20px;
   font-weight: bold;
+
+  justify-self: left;
 }
 
 .A_Date {
@@ -305,18 +309,19 @@ body {
   padding: 0;
 
   font-size: 14px;
+  justify-self: right;
 }
 
 .DescButtons {
-  display: grid;
-  grid: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
 }
 
 .A_DescButton {
-  width: 120px;
+  width: 100px;
   height: 50px;
-  margin: 20px;
+  margin: 10px;
   padding: 10px, 5px;
   font-size: 12px;
   font-weight: 500px;
@@ -329,7 +334,8 @@ body {
 }
 
 .All_Descriptions {
-  width: 200px;   
+ 
+  width: 20%;
   margin: 0%;
   padding: 0%;
   padding: 0%;
@@ -345,10 +351,10 @@ body {
   font-size: 12px;
   font-weight: normal;
   padding: 10px;
- 
+
   justify-self: center;
   text-align: left;
-  align-self: center; 
+  align-self: center;
   width: fit-content;
 
   border-radius: 10px;
@@ -369,14 +375,14 @@ body {
   width: inherit;
   height: inherit;
 
-  align-self: center; 
+  align-self: center;
 
-  display: none; 
+  display: none;
 }
 
 #popup_Container {
-  display: grid; 
-  place-items: center; 
+  display: grid;
+  place-items: center;
 
   width: fit-content;
   height: fit-content;
@@ -384,8 +390,8 @@ body {
 }
 
 #popup_Image {
-  position: fixed; 
-  z-index: 200; 
+  position: fixed;
+  z-index: 200;
   width: 350px;
   height: fit-content;
 
@@ -393,8 +399,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  border-radius: 10px; 
-  border-color: var(--globalLineColor); 
+  border-radius: 10px;
+  border-color: var(--globalLineColor);
   border-style: solid;
-}
 
+
+}
