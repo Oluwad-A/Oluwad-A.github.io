@@ -19,10 +19,6 @@ body {
   justify-self: center;
   justify-content: center;
 
-  margin: 0;
-  padding: 0;
-
-  padding: 0;
   font-family: Arial, sans-serif;
   transition: background-color 0.5s, color 0.5s;
   background-color: var(--globalBackgroundColor);
@@ -56,6 +52,7 @@ body {
 
   padding: 10px;
   border-radius: 12px;
+  margin: 3%; 
   border-style: solid;
 
   background-color: var(--globalBackgroundColor);
@@ -67,7 +64,7 @@ body {
 }
 
 #Photo {
-  height: auto;
+  height: inherit;
   width: 25%;
 
   align-self: last baseline;
@@ -170,14 +167,8 @@ body {
 }
 
 #All_Projects {
-  width: 100%;
+  width: inherit;
   justify-content: center;
-}
-
-.A_Subject {
-  justify-content: middle;
-  justify-items: middle;
-  justify-self: middle;
 }
 
 .A_Project {
