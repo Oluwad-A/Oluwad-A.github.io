@@ -338,12 +338,14 @@ body {
 }
 
 .A_DescButton {
-  width: 100px;
+  width: 80px;
   height: 50px;
   margin: 2px;
-  padding: 10px, 5px;
-  font-size: 12px;
+  padding: 10px;
+  font-size: 9px;
   font-weight: 500px;
+
+  text-align: center; 
 
   border-radius: 12px;
   background-color: var(--globalBackgroundColor);
