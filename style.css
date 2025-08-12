@@ -272,7 +272,7 @@ body {
   width: 50%;
   margin: 10px;
   height: 300px;
- 
+
 }
 
 #DCNIcon1 {
@@ -280,19 +280,19 @@ body {
 }
 
 #DCNIcon2 {
-  justify-self: right; 
+  justify-self: right;
 }
 
 .RectHalfGrouper {
 
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   width: 100%;
-   max-width: 500px;
+  max-width: 500px;
 
   margin-right: 20px;
   margin-left: 20px;
-  align-self: center; 
+  align-self: center;
 }
 
 .Project_Header {
@@ -348,10 +348,10 @@ body {
 }
 
 .All_Descriptions {
- 
+
   width: 100%;
   padding: 10px;
-  margin: 10px; 
+  margin: 10px;
 
   display: none;
 
@@ -365,7 +365,7 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 10px;
-  padding: 10px; 
+  padding: 10px;
 
   font-size: 15px;
   font-weight: normal;
