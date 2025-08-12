@@ -182,7 +182,7 @@ body {
   flex-direction: column;
   justify-self: center;
 
-  width: 100%;
+  width: fit-content;
   max-width: 650px;
 
   position: relative;
@@ -268,7 +268,6 @@ body {
 
 .Vert_Rect {
   width: 50%;
-  margin: 10px;
   height: 300px;
 
 }
