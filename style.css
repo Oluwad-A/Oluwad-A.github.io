@@ -50,12 +50,12 @@ body {
 
   display: flex;
   flex-direction: row;
+  justify-self: center; 
   background-color: var(--globalBackgroundColor);
-  width: 90%;
+  width: 95%;
 
   padding: 10px;
   border-radius: 12px;
-  margin: 3%;
   border-style: solid;
 
   background-color: var(--globalBackgroundColor);
@@ -175,6 +175,11 @@ body {
 
 #All_Projects {
   width: inherit;
+  justify-content: center;
+}
+
+.A_Subject {
+  justify-self: center;
   justify-content: center;
 }
 
