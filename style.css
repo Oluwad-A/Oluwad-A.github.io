@@ -30,9 +30,6 @@ body {
   transition: 0.5s;
 }
 
-#content {
-  width: 80%;
-}
 
 #modeSwitch {
   height: 25px;
@@ -394,5 +391,7 @@ body {
   border-radius: 10px; 
   border-color: var(--globalLineColor); 
   border-style: solid;
+  
+
 }
 
