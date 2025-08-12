@@ -206,7 +206,7 @@ body {
   position: relative;
   transition: 0.5s;
 
-  opacity: 0.5;
+  opacity: 1;
   content: '';
   height: auto;
 
@@ -233,6 +233,12 @@ body {
 
 }
 
+/*
+  Hover currently incompatible with mobile. To be resolved.
+*/
+
+/*
+
 .A_Project:hover {
   opacity: 1;
   z-index: 100;
@@ -245,6 +251,8 @@ body {
 
   width: 100%;
 }
+
+  */
 
 .Project_Left {
   display: flex;
@@ -419,7 +427,6 @@ body {
 
   position: fixed;
   width: 50px; 
-
 
   top: 50%;
   left: 50%;
