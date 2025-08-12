@@ -79,13 +79,13 @@ body {
 }
 
 .bioText {
-  font-size: 15px;
+  font-size: 10px;
   color: var(--globalLineColor);
   justify-self: left;
 }
 
 #Name {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
