@@ -4,256 +4,275 @@
 <head>
     <title>D.A. Projects</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device.width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"> 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="TheBody">
+<body>
+    <div id="content">
+        <script src="main.js"></script>
+        <noscript>
+            It seems like your browser doesn't support JavaScript. Try changing your browser.
+            If that doesn't work, my condolences.
+        </noscript>
 
-    <script src="main.js"></script>
-    <noscript>
-        It seems like your browser doesn't support JavaScript. Try changing your browser.
-        If that doesn't work, my condolences.
-    </noscript>
+        <div>
+            <img id="modeSwitch" src="/Showcase Site/BaseIcons/MoonIcon.png" onclick="swapScreen()">
+        </div>
 
-    <div>
-        <img id="modeSwitch" src="/Showcase Site/BaseIcons/MoonIcon.png" onclick="swapScreen()">
-    </div>
+        <div id="bio">
+            <img id="Photo" src="/Showcase Site/BaseIcons/Photo.png">
+            <div id="bioInfo">
+                <p class="bioText" id="Name">Damilare Akinsola</p>
+                <p class="bioText" id="Major">Computer Science and Design | Northeastern University</p>
+                <div>
+                    <a class="bioText" id="Email1" href="mailto:akinsolaoluwadamilare64@gmail.com">
+                        akinsolaoluwadamilare64@gmail.com</p>
+                </div>
+                <div>
+                    <a class="bioText" id="Email2" href="mailto:akinsola.o@northeastern.edu">
+                        akinsola.o@northeastern.edu</p>
+                </div>
 
-    <div id="bio">
-        <img id="Photo" src="/Showcase Site/BaseIcons/Photo.png">
-        <div id="bioInfo">
-            <p class="bioText" id="Name">Damilare Akinsola</p>
-            <p class="bioText" id="Major">Computer Science and Design | Northeastern University</p>
-            <div>
-                <a class="bioText" id="Email1" href="mailto:akinsolaoluwadamilare64@gmail.com">
-                    akinsolaoluwadamilare64@gmail.com</p>
-            </div>
-            <div>
-                <a class="bioText" id="Email2" href="mailto:akinsola.o@northeastern.edu">
-                    akinsola.o@northeastern.edu</p>
-            </div>
-
-            <div>
-                <a class="bioText" href="https://www.linkedin.com/in/dakins/">LinkedIn</a>
-                |
-                <a class="bioText" href="https://github.com/Oluwad-A">Github</a>
+                <div>
+                    <a class="bioText" href="https://www.linkedin.com/in/dakins/">LinkedIn</a>
+                    |
+                    <a class="bioText" href="https://github.com/Oluwad-A">Github</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="mainButtons">
-        <h2>What are you here to see?</h2>
-        <div class="centeredDiv">
-            <button class="mButton" id="Toggle_CS" onmouseover="hoverColor(0)" onmouseout="returnColor(0)"
-                onclick="toggleSection(0)">Computer Science</button>
-            <button class="mButton" id="Toggle_Design" onmouseover="hoverColor(1)" onmouseout="returnColor(1)"
-                onclick="toggleSection(1)">UI / UX Design</button>
-            <button class="mButton" id="Toggle_Other" onmouseover="hoverColor(2)" onmouseout="returnColor(2)"
-                onclick="toggleSection(2)">Other</button>
+        <div class="mainButtons">
+            <h2>What are you here to see?</h2>
+            <div class="centeredDiv">
+                <button class="mButton" id="Toggle_CS" onmouseover="hoverColor(0)" onmouseout="returnColor(0)"
+                    onclick="toggleSection(0)">Computer Science</button>
+                <button class="mButton" id="Toggle_Design" onmouseover="hoverColor(1)" onmouseout="returnColor(1)"
+                    onclick="toggleSection(1)">UI / UX Design</button>
+                <button class="mButton" id="Toggle_Other" onmouseover="hoverColor(2)" onmouseout="returnColor(2)"
+                    onclick="toggleSection(2)">Other</button>
+            </div>
         </div>
-    </div>
 
-    <div class="spacer"></div>
+        <div class="spacer"></div>
 
-    <!-- 
+        <!-- 
         Functionality Constraints
         - All ID's must start with three unique letters.
         - All icons must be granted a class among the following:
             - "Vert_Rect"
             - "Horiz_Rect"
             - "Square"
-    -->
+        -->
 
-    <div id="popup_Container" style="display: none;">
-        <img id="popup_Image" src="" />
-    </div>
+        <div id="popup_Container" style="display: none;">
+            <img id="popup_Image" src="" />
+        </div>
 
-    <div id="All_Projects">
-        <div id="All_CS" class="A_Subject" style="display: none;">
+        <div id="All_Projects">
+            <div id="All_CS" class="A_Subject" style="display: none;">
 
-            <div class="A_Project">
-                <div class="Project_Left">
-                    <div class="Project_Header">
-                        <p class="A_Title">Breach The Console</p>
-                        <p class="A_Date">May - December 2024</p>
+                <div class="A_Project">
+                    <div class="Project_Left">
+                        <div class="Project_Header">
+                            <p class="A_Title">Breach The Console</p>
+                            <p class="A_Date">May - December 2024</p>
+                        </div>
+
+                        <img class="Square" id="BTCIcon" onclick="showPopup('BTCIcon')"
+                            src="/Showcase Site/BaseIcons/BreachTheConsoleIcon.png" />
+                        <div class="DescButtons">
+                            <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc1')">Project
+                                Overview</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc2')">Incremental
+                                Randomization</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc3')">Designing for
+                                Alteration</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc4')">Video
+                                Demonstration</button>
+                        </div>
                     </div>
 
-                    <img class="Square" id="BTCIcon" onclick="showPopup('BTCIcon')"
-                        src="/Showcase Site/BaseIcons/BreachTheConsoleIcon.png" />
-                    <div class="DescButtons">
-                        <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc1')">Project
-                            Overview</button>
-                        <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc2')">Incremental
-                            Randomization</button>
-                        <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc3')">Designing for
-                            Alteration</button>
-                        <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc4')">Video
-                            Demonstration</button>
+                    <div class="All_Descriptions" id="BTC_All">
+                        <p class="A_Description BTCDesc" id="BTCDesc1" style="display: none;">
+                            This project was started as part of an assignment to create a game in java viewable
+                            exclusively
+                            by printing to a console. This constraint was given to reduce our focus on visual elements
+                            and
+                            prioritize the components that the game would be based upon. With this constraint in mind, I
+                            wanted to create a game with some level of story and visual allure while still being
+                            functional.
+                        </p>
+                        <p class="A_Description BTCDesc" id="BTCDesc2" style="display: none;">
+                            The three primary aspects of the game including managing energy, gathering and using items,
+                            and surviving events (with the primary three events being implementations of pacman, hangman
+                            or
+                            wordle, and pictionary). Events occur at random when the player continues the game, and
+                            certain
+                            items discovered (primarily through pacman) would assist the user with future events.
+
+                            Energy was implemented to further exacerbate the impact of randomness. As the game
+                            progresses,
+                            the difficulty of each event increases, and energy must be managed to prevent the player
+                            from
+                            being impaired in future events.
+                        </p>
+                        <p class="A_Description BTCDesc" id="BTCDesc3" style="display: none;">
+                            The games initial design was constructed in a way that made it difficult to implement new
+                            events and items in the future. Upon learning object-oriented programming concepts such as
+                            inheritance and abstract classes, I was able to reimplement encounters in a manner that was
+                            not only easier to read, but also easier to edit in the event of future additions.
+                        </p>
+                        <video class="BTCDesc A_DescVideo" id="BTCDesc4" controls>
+                            <source src="/Showcase Site/Videos/BTC.mp4" type="video/mp4">
+                            This browser does not support videos.
+                        </video>
                     </div>
+                    <div class="miniSpacer"></div>
                 </div>
 
-                <div class="All_Descriptions" id="BTC_All">
-                    <p class="A_Description BTCDesc" id="BTCDesc1" style="display: none;">
-                        This project was started as part of an assignment to create a game in java viewable exclusively
-                        by printing to a console. This constraint was given to reduce our focus on visual elements and
-                        prioritize the components that the game would be based upon. With this constraint in mind, I
-                        wanted to create a game with some level of story and visual allure while still being functional.
-                    </p>
-                    <p class="A_Description BTCDesc" id="BTCDesc2" style="display: none;">
-                        The three primary aspects of the game including managing energy, gathering and using items,
-                        and surviving events (with the primary three events being implementations of pacman, hangman or
-                        wordle, and pictionary). Events occur at random when the player continues the game, and certain
-                        items discovered (primarily through pacman) would assist the user with future events.
+                <div class="spacer"></div>
 
-                        Energy was implemented to further exacerbate the impact of randomness. As the game progresses,
-                        the difficulty of each event increases, and energy must be managed to prevent the player from
-                        being impaired in future events.
-                    </p>
-                    <p class="A_Description BTCDesc" id="BTCDesc3" style="display: none;">
-                        The games initial design was constructed in a way that made it difficult to implement new
-                        events and items in the future. Upon learning object-oriented programming concepts such as
-                        inheritance and abstract classes, I was able to reimplement encounters in a manner that was
-                        not only easier to read, but also easier to edit in the event of future additions.
-                    </p>
-                    <video class="BTCDesc A_DescVideo" id="BTCDesc4" controls>
-                        <source src="/Showcase Site/Videos/BTC.mp4" type="video/mp4">
-                        This browser does not support videos.
-                    </video>
+                <div class="A_Project">
+
+                    <div class="Project_Left">
+                        <div class="Project_Header">
+                            <p class="A_Title">Notification Manager</p>
+                            <p class="A_Date">November 2024 - Present</p>
+                        </div>
+                        <img class="Horiz_Rect" id="NMMIcon" onclick="showPopup('NMMIcon')"
+                            src="/Showcase Site/BaseIcons/NotifManagerIcon.png" />
+                        <div class="DescButtons">
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc1')">Project
+                                Overview</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc2')">Checking for
+                                Constraints</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc3')">Saving / Manual
+                                Editing</button>
+                        </div>
+                    </div>
+
+                    <div class="All_Descriptions" id="NMM_All">
+                        <p class="A_Description NMMDesc" id="NMMDesc1" style="display: none;">
+                            This was a personal project I decided to make due to difficulties with online reminders.
+                            When looking for a means of providing reminders to myself without using a phone, the
+                            internet,
+                            or a roundabout method on my calendar, I struggled to find anythinsg simple or
+                            straightforward.
+                            Thus, it is with this in mind that I decided to create a simple notification manager.
+                        </p>
+                        <p class="A_Description NMMDesc" id="NMMDesc2" style="display: none;">
+                            Designing this was a unique test for not only saving and reading information but also
+                            working
+                            with one's current device constraints in mind. Unlike past projects which had 'self-imposed'
+                            constraints (such as with games), the constraints of notifications were more bound by
+                            reality.
+                            This included not allowing notifications to be made for dates that have already passed,
+                            making
+                            notifications readable not only on the actual notifications but also to the formatted file
+                            they
+                            they were saved to, and allowing notifications to be edited and reread by the manager
+                            without
+                        </p>
+                        <p class="A_Description NMMDesc" id="NMMDesc3" style="display: none;">
+                            The biggest challenge of this project was allowing it to save and re-read Notifications. I
+                            decided early on that I wanted to save to a txt file since it would allow for users to read
+                            and
+                            directly
+                            edit the notifications they created if they wanted to change something after making a
+                            notification. However, in doing so, I encountered multiple issues, specifically with
+                            rereading
+                            manually
+                            inputted notifications or clearing old ones that have already occured. To resolve this, I
+                            incorporated a
+                            strict forma for how notifications should be written to the txt file, with those neglecting
+                            this
+                            format being completely ignored.
+                        </p>
+                    </div>
+                    <div class="miniSpacer"></div>
                 </div>
-                <div class="miniSpacer"></div>
             </div>
 
-            <div class="spacer"></div>
+            <div id="All_Design" class="A_Subject" style="display: none;">
 
-            <div class="A_Project">
+                <div class="A_Project">
+                    <div class="Project_Left">
+                        <div class="Project_Header">
+                            <p class="A_Title">Wellness Hub</p>
+                            <p class="A_Date">January - April 2025</p>
+                        </div>
+                        <img class="Horiz_Rect" id="NWHIcon" onclick="showPopup('NWHIcon')"
+                            src="/Showcase Site/BaseIcons/Wellness Hub.png" />
+                        <div class="DescButtons">
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NWHDesc1')">Project
+                                Overview</button>
+                        </div>
+                    </div>
 
-                <div class="Project_Left">
-                    <div class="Project_Header">
-                        <p class="A_Title">Notification Manager</p>
-                        <p class="A_Date">November 2024 - Present</p>
+                    <div class="All_Descriptions" id="NWH_All">
+                        <p class="A_Description NWHDesc" id="NWHDesc1" style="display: none;">
+                            This project was a joint effort with two collaborators to encapsulate the experience design
+                            process.
+                            In addition to mapping out a user's journey throughout our mock product, a mental health
+                            'wellness hub'
+                            in the form of a website, physical stations, and pamphlets, we also practiced methods
+                            including,
+                            but not
+                            limited to, journey maps, data acquisition, and prototyping.
+                        </p>
                     </div>
-                    <img class="Horiz_Rect" id="NMMIcon" onclick="showPopup('NMMIcon')"
-                        src="/Showcase Site/BaseIcons/NotifManagerIcon.png" />
-                    <div class="DescButtons">
-                        <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc1')">Project
-                            Overview</button>
-                        <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc2')">Checking for
-                            Constraints</button>
-                        <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc3')">Saving / Manual
-                            Editing</button>
-                    </div>
+                    <div class="miniSpacer"></div>
                 </div>
 
-                <div class="All_Descriptions" id="NMM_All">
-                    <p class="A_Description NMMDesc" id="NMMDesc1" style="display: none;">
-                        This was a personal project I decided to make due to difficulties with online reminders.
-                        When looking for a means of providing reminders to myself without using a phone, the internet,
-                        or a roundabout method on my calendar, I struggled to find anythinsg simple or straightforward.
-                        Thus, it is with this in mind that I decided to create a simple notification manager.
-                    </p>
-                    <p class="A_Description NMMDesc" id="NMMDesc2" style="display: none;">
-                        Designing this was a unique test for not only saving and reading information but also working
-                        with one's current device constraints in mind. Unlike past projects which had 'self-imposed'
-                        constraints (such as with games), the constraints of notifications were more bound by reality.
-                        This included not allowing notifications to be made for dates that have already passed, making
-                        notifications readable not only on the actual notifications but also to the formatted file they
-                        they were saved to, and allowing notifications to be edited and reread by the manager without
-                    </p>
-                    <p class="A_Description NMMDesc" id="NMMDesc3" style="display: none;">
-                        The biggest challenge of this project was allowing it to save and re-read Notifications. I
-                        decided early on that I wanted to save to a txt file since it would allow for users to read and
-                        directly
-                        edit the notifications they created if they wanted to change something after making a
-                        notification. However, in doing so, I encountered multiple issues, specifically with rereading
-                        manually
-                        inputted notifications or clearing old ones that have already occured. To resolve this, I
-                        incorporated a
-                        strict forma for how notifications should be written to the txt file, with those neglecting this
-                        format being completely ignored.
-                    </p>
+                <div class="spacer"></div>
+
+                <div class="A_Project">
+                    <div class="Project_Left">
+                        <div class="Project_Header">
+                            <p class="A_Title">DCN Poster</p>
+                            <p class="A_Date">November 2024</p>
+                        </div>
+                        <div class="RectHalfGrouper">
+                            <img class="Vert_Rect An_IconRectHalf" id="DCNIcon1" onclick="showPopup('DCNIcon1')"
+                                src="/Showcase Site/BaseIcons/Design Culture Now.png" />
+                            <img class="Vert_Rect An_IconRectHalf" id="DCNIcon2" onclick="showPopup('DCNIcon2')"
+                                src="/Showcase Site/BaseIcons/Design Culture Now2.png" />
+                        </div>
+
+                        <div class="DescButtons">
+                            <button class="A_DescButton" onclick="toggleDescVisibility('DCNDesc1')">Project
+                                Overview</button>
+                        </div>
+                    </div>
+
+                    <div class="All_Descriptions" id="DCN_All">
+                        <p class="A_Description DCNDesc" id="DCNDesc1" style="display: none;">
+                            This poster was the result of a typography project aimed to make news of guest speakers both
+                            readable
+                            and appealing to the average passerby. Given that the target audience would be university
+                            students
+                            walking to their lectures, club activities, or dorms, posters had to be designed with the
+                            intention
+                            of grabbing attention and keeping it long enough for those passing to skim the information
+                            on
+                            the poster.
+                            The left and right sides are the first and last main iterations of the poster respectively.
+                        </p>
+                    </div>
+                    <div class="miniSpacer"></div>
                 </div>
-                <div class="miniSpacer"></div>
+
             </div>
         </div>
 
-        <div id="All_Design" class="A_Subject" style="display: none;">
-
-            <div class="A_Project">
-                <div class="Project_Left">
-                    <div class="Project_Header">
-                        <p class="A_Title">Wellness Hub</p>
-                        <p class="A_Date">January - April 2025</p>
-                    </div>
-                    <img class="Horiz_Rect" id="NWHIcon" onclick="showPopup('NWHIcon')"
-                        src="/Showcase Site/BaseIcons/Wellness Hub.png" />
-                    <div class="DescButtons">
-                        <button class="A_DescButton" onclick="toggleDescVisibility('NWHDesc1')">Project
-                            Overview</button>
-                    </div>
-                </div>
-
-                <div class="All_Descriptions" id="NWH_All">
-                    <p class="A_Description NWHDesc" id="NWHDesc1" style="display: none;">
-                        This project was a joint effort with two collaborators to encapsulate the experience design
-                        process.
-                        In addition to mapping out a user's journey throughout our mock product, a mental health
-                        'wellness hub'
-                        in the form of a website, physical stations, and pamphlets, we also practiced methods including,
-                        but not
-                        limited to, journey maps, data acquisition, and prototyping.
-
-                    </p>
-                </div>
-                <div class="miniSpacer"></div>
+        <div id="Other" class="A_Communication_Area" style="display: none;">
+            <div>
+                To be updated.
             </div>
-
-            <div class="spacer"></div>
-
-            <div class="A_Project">
-                <div class="Project_Left">
-                    <div class="Project_Header">
-                        <p class="A_Title">DCN Poster</p>
-                        <p class="A_Date">November 2024</p>
-                    </div>
-                    <div class="RectHalfGrouper">
-                        <img class="Vert_Rect An_IconRectHalf" id="DCNIcon1" onclick="showPopup('DCNIcon1')"
-                            src="/Showcase Site/BaseIcons/Design Culture Now.png" />
-                        <img class="Vert_Rect An_IconRectHalf" id="DCNIcon2" onclick="showPopup('DCNIcon2')"
-                            src="/Showcase Site/BaseIcons/Design Culture Now2.png" />
-                    </div>
-                    
-                    <div class="DescButtons">
-                        <button class="A_DescButton" onclick="toggleDescVisibility('DCNDesc1')">Project
-                            Overview</button>
-                    </div>
-                </div>
-
-                <div class="All_Descriptions" id="DCN_All">
-                    <p class="A_Description DCNDesc" id="DCNDesc1" style="display: none;">
-                    This poster was the result of a typography project aimed to make news of guest speakers both
-                    readable
-                    and appealing to the average passerby. Given that the target audience would be university
-                    students
-                    walking to their lectures, club activities, or dorms, posters had to be designed with the
-                    intention
-                    of grabbing attention and keeping it long enough for those passing to skim the information on
-                    the poster.
-                    The left and right sides are the first and last main iterations of the poster respectively.
-                    </p>
-                </div>
-                <div class="miniSpacer"></div>
-            </div>
-            
         </div>
     </div>
-
-    <div id="Other" class="A_Communication_Area" style="display: none;">
-        <div>
-            To be updated.
-        </div>
-    </div>
-    </div>
+</div>
 </body>
 
 </html>
