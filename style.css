@@ -408,13 +408,13 @@ body {
 
   width: fit-content;
   height: fit-content;
-  height: 100%;
 }
 
 #popup_Image {
   position: fixed;
+  width: 100%; 
+  max-width: 450px;
   z-index: 200;
-  width: 350px;
   height: fit-content;
 
   top: 50%;
