@@ -229,7 +229,6 @@ function changePDFPage(pdfId, pdfMaxPage, direction) {
         curPage = pdfMaxPage; 
     }
 
-    document.getElementById(pdfId + "Pages").src = "/Showcase Site/Documents/Wellness Hub/" + pdfId + curPage + ".jpg"; 
+    document.getElementById(pdfId + "Pages").src = "Documents/Wellness Hub/" + pdfId + curPage + ".jpg"; 
 }
-
 
