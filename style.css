@@ -31,7 +31,7 @@ body {
   justify-content: center;
   justify-self: center;
 
-  border-color: var(--globalLineColor); 
+  border-color: var(--globalLineColor);
   border-radius: 10px;
 }
 
@@ -50,7 +50,7 @@ body {
 
   display: flex;
   flex-direction: row;
-  justify-self: center; 
+  justify-self: center;
   background-color: var(--globalBackgroundColor);
   width: 95%;
 
@@ -67,7 +67,7 @@ body {
 }
 
 #Photo {
-  
+
   height: inherit;
   width: 25%;
   min-width: 0px;
@@ -179,7 +179,7 @@ body {
 #All_Projects {
   width: 100%;
   justify-content: center;
-  justify-self: center; 
+  justify-self: center;
 }
 
 .A_Subject {
@@ -206,7 +206,7 @@ body {
 
   padding: 20px;
   margin-left: 0;
-  margin-right: 0; 
+  margin-right: 0;
   background-color: var(--globalBackgroundColor);
 
   border-radius: 15px;
@@ -347,7 +347,7 @@ body {
   font-size: 9px;
   font-weight: 500px;
 
-  text-align: center; 
+  text-align: center;
 
   border-radius: 12px;
   background-color: var(--globalBackgroundColor);
@@ -408,6 +408,25 @@ body {
   display: none;
 }
 
+.A_PDF {
+  justify-content: center;
+
+  width: inherit;
+  align-self: center;
+
+  display: none;
+}
+
+.A_PDF_Button {
+  text-align: center;
+
+  border-radius: 12px;
+  background-color: var(--globalBackgroundColor);
+  border-color: var(--globalLineColor);
+  color: var(--globalLineColor);
+  transition: 0.5s;
+}
+
 #popup_Container {
   display: none;
   place-items: center;
@@ -420,7 +439,7 @@ body {
   z-index: 200;
 
   position: fixed;
-  width: 50px; 
+  width: 50px;
 
 
   top: 50%;
