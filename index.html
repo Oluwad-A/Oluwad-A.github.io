@@ -16,11 +16,11 @@
             If that doesn't work, my condolences.
         </noscript>
         <div>
-            <img id="modeSwitch" src="/Showcase Site/BaseIcons/MoonIcon.png" onclick="swapScreen()">
+            <img id="modeSwitch" src="/BaseIcons/MoonIcon.png" onclick="swapScreen()">
         </div>
 
         <div id="bio">
-            <img id="Photo" src="/Showcase Site/BaseIcons/Photo.png">
+            <img id="Photo" src="/BaseIcons/Photo.png">
             <div id="bioInfo">
                 <p class="bioText" id="Name">Damilare Akinsola</p>
                 <p class="bioText" id="Major">Computer Science and Design | Northeastern University</p>
@@ -49,7 +49,7 @@
                 <button class="mButton" id="Toggle_Design" onmouseover="hoverColor(1)" onmouseout="returnColor(1)"
                     onclick="toggleSection(1)">UI / UX Design</button>
                 <button class="mButton" id="Toggle_Other" onmouseover="hoverColor(2)" onmouseout="returnColor(2)"
-                    onclick="toggleSection(2)">Other</button>
+                    onclick="toggleSection(2)">Portfolio Navigation Assistance</button>
             </div>
         </div>
 
@@ -72,7 +72,7 @@
                             <p class="A_Date">May - December 2024</p>
                         </div>
                         <img class="Square" id="BTCIcon" onclick="showPopup('BTCIcon')"
-                            src="/Showcase Site/BaseIcons/BreachTheConsoleIcon.png" />
+                            src="/BaseIcons/BreachTheConsoleIcon.png" />
                         <div class="DescButtons">
                             <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc1')">Project
                                 Overview</button>
@@ -83,7 +83,6 @@
                             <button class="A_DescButton" onclick="toggleDescVisibility('BTCDesc4')">Video
                                 Demonstration</button>
                         </div>
-
 
                         <div class="All_Descriptions" id="BTC_All">
                             <p class="A_Description BTCDesc" id="BTCDesc1" style="display: none;">
@@ -123,7 +122,7 @@
                                 not only easier to read, but also easier to edit in the event of future additions.
                             </p>
                             <video class="BTCDesc A_DescVideo" id="BTCDesc4" controls>
-                                <source src="/Showcase Site/Videos/BTC.mp4" type="video/mp4">
+                                <source src="/Videos/BTC.mp4" type="video/mp4">
                                 This browser does not support videos.
                             </video>
                         </div>
@@ -138,16 +137,17 @@
                             <p class="A_Date">November 2024 - Present</p>
                         </div>
                         <img class="Horiz_Rect" id="NMMIcon" onclick="showPopup('NMMIcon')"
-                            src="/Showcase Site/BaseIcons/NotifManagerIcon.png" />
+                            src="/BaseIcons/NotifManagerIcon.png" />
                         <div class="DescButtons">
                             <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc1')">Project
                                 Overview</button>
                             <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc2')">Checking for
                                 Constraints</button>
-                            <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc3')">Saving / Manual
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc3')">Saving and
                                 Editing</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NMMDesc4')">Video
+                                Demonstration</button>
                         </div>
-
 
                         <div class="All_Descriptions" id="NMM_All">
                             <p class="A_Description NMMDesc" id="NMMDesc1" style="display: none;">
@@ -192,6 +192,10 @@
                                 this
                                 format being completely ignored.
                             </p>
+                            <video class="NMMDesc A_DescVideo" id="NMMDesc4" controls>
+                                <source src="/Videos/NotifManager.mp4" type="video/mp4">
+                                This browser does not support videos.
+                            </video>
                         </div>
                     </div>
                 </div>
@@ -206,10 +210,11 @@
                             <p class="A_Date">January - April 2025</p>
                         </div>
                         <img class="Horiz_Rect" id="NWHIcon" onclick="showPopup('NWHIcon')"
-                            src="/Showcase Site/BaseIcons/Wellness Hub.png" />
+                            src="/BaseIcons/Wellness Hub.png" />
                         <div class="DescButtons">
                             <button class="A_DescButton" onclick="toggleDescVisibility('NWHDesc1')">Project
                                 Overview</button>
+                            <button class="A_DescButton" onclick="toggleDescVisibility('NWHDesc2')">View Pages</button>
                         </div>
 
 
@@ -225,6 +230,13 @@
                                 but not
                                 limited to, journey maps, data acquisition, and prototyping.
                             </p>
+
+                            <div class="A_Description A_PDF NWHDesc" id="NWHDesc2" style="display: none;">
+                                <button class="A_PDF_Button" onclick="changePDFPage('NWH', 19, -1)"> Prev  </button>
+                                <img class="Vert_Rect A_PDF_Image" id="NWHPages" src="Documents/Wellness Hub/NWH1.jpg" onclick="showPopup('NWHPages')">
+                                <button class="A_PDF_Button" onclick="changePDFPage('NWH', 19, 1)"> Next </button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -237,16 +249,15 @@
                         </div>
                         <div class="RectHalfGrouper">
                             <img class="Vert_Rect Half1" id="DCNIcon1" onclick="showPopup('DCNIcon1')"
-                                src="/Showcase Site/BaseIcons/Design Culture Now.png" />
+                                src="/BaseIcons/Design Culture Now.png" />
                             <img class="Vert_Rect Half2" id="DCNIcon2" onclick="showPopup('DCNIcon2')"
-                                src="/Showcase Site/BaseIcons/Design Culture Now2.png" />
+                                src="/BaseIcons/Design Culture Now2.png" />
                         </div>
 
                         <div class="DescButtons">
                             <button class="A_DescButton" onclick="toggleDescVisibility('DCNDesc1')">Project
                                 Overview</button>
                         </div>
-
 
                         <div class="All_Descriptions" id="DCN_All">
                             <p class="A_Description DCNDesc" id="DCNDesc1" style="display: none;">
@@ -274,10 +285,10 @@
         </div>
 
         <div id="Other" class="A_Communication_Area" style="display: none;">
-                To be updated.
+            Sun/Moon button at top to change view mode.
+            Click on images to make them larger. Click again to minimize. 
         </div>
 
-        
         <div id="popup_Container" style="display: none;">
             <img id="popup_Image" src="" />
         </div>
