@@ -213,5 +213,22 @@ function showPopup(imageId) {
 
 }
 
+let curPage = 1
 
+function changePDFPage(pdfId, pdfMaxPage, direction) {
+    if (direction <= 0) {
+        curPage = curPage - 1; 
+    } else {
+        curPage = curPage + 1; 
+    }
+
+    if (curPage > pdfMaxPage) {
+        curPage = 1; 
+    }
+    if (curPage < 1) {
+        curPage = pdfMaxPage; 
+    }
+
+    document.getElementById(pdfId + "Pages").src = "Documents/Wellness Hub/" + pdfId + curPage + ".jpg"; 
+}
 
