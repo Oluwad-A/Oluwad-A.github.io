@@ -106,16 +106,25 @@ function toggleSection(index) {
     if (index == 0) {
         document.getElementById("All_CS").style.display = 'block';
         document.getElementById("All_Design").style.display = 'none';
+        document.getElementById("All_Animation").style.display = 'none';
         document.getElementById("Other").style.display = 'none';
     }
     if (index == 1) {
         document.getElementById("All_CS").style.display = 'none';
         document.getElementById("All_Design").style.display = 'block';
+        document.getElementById("All_Animation").style.display = 'none';
         document.getElementById("Other").style.display = 'none';
     }
     if (index == 2) {
         document.getElementById("All_CS").style.display = 'none';
         document.getElementById("All_Design").style.display = 'none';
+        document.getElementById("All_Animation").style.display = 'block';
+        document.getElementById("Other").style.display = 'none';
+    }
+    if (index == 3) {
+        document.getElementById("All_CS").style.display = 'none';
+        document.getElementById("All_Design").style.display = 'none';
+        document.getElementById("All_Animation").style.display = 'none';
         document.getElementById("Other").style.display = 'block';
     }
 
@@ -217,18 +226,18 @@ let curPage = 1
 
 function changePDFPage(pdfId, pdfMaxPage, direction) {
     if (direction <= 0) {
-        curPage = curPage - 1; 
+        curPage = curPage - 1;
     } else {
-        curPage = curPage + 1; 
+        curPage = curPage + 1;
     }
 
     if (curPage > pdfMaxPage) {
-        curPage = 1; 
+        curPage = 1;
     }
     if (curPage < 1) {
-        curPage = pdfMaxPage; 
+        curPage = pdfMaxPage;
     }
 
-    document.getElementById(pdfId + "Pages").src = "Documents/Wellness Hub/" + pdfId + curPage + ".jpg"; 
+    document.getElementById(pdfId + "Pages").src = "Documents/Wellness Hub/" + pdfId + curPage + ".jpg";
 }
 
